@@ -44,19 +44,19 @@ public class Main {
         Scanner scnr = new Scanner(System.in); // gets input from keyboard
 
         // get input file name from user
-        //System.out.print("Enter the file to open: "); // "testFile.txt" in my program - // DELETE 
+        System.out.print("Enter the file to open: "); // "testFile.txt" in my program - // DELETE 
         String filename = scnr.nextLine(); // read in file name to open
 
         // get char to represent ant 
-        //System.out.print("Enter the char to represent ant: "); // DELETE
+        System.out.print("Enter the char to represent ant: "); // DELETE
         antChar = scnr.next().charAt(0);
 
         // get char to represent beetle 
-        //System.out.print("Enter the char to represent beetle: "); // DELETE
+        System.out.print("Enter the char to represent beetle: "); // DELETE
         beetleChar = scnr.next().charAt(0);
 
         // get number of turns to simulate from the user
-        //System.out.print("Enter the number of turns: "); // DELETE
+        System.out.print("Enter the number of turns to simulate: "); // DELETE
         numTurns = scnr.nextInt();
 
         
