@@ -21,10 +21,6 @@ public class Main {
      *******************************************************/
     public static void main(String[] args) throws IOException 
     {
-
-        //int antCount = 0; // DELETE later
-        //int beetleCount = 0; // DELETE later
-
         int numTurns;
 
         String northDistance;
@@ -48,15 +44,15 @@ public class Main {
         String filename = scnr.nextLine(); // read in file name to open
 
         // get char to represent ant 
-        System.out.print("Enter the char to represent ant: "); // DELETE
+        System.out.print("Enter the char to represent ant: ");
         antChar = scnr.next().charAt(0);
 
         // get char to represent beetle 
-        System.out.print("Enter the char to represent beetle: "); // DELETE
+        System.out.print("Enter the char to represent beetle: "); 
         beetleChar = scnr.next().charAt(0);
 
         // get number of turns to simulate from the user
-        System.out.print("Enter the number of turns to simulate: "); // DELETE
+        System.out.print("Enter the number of turns to simulate: "); 
         numTurns = scnr.nextInt();
 
         
@@ -115,12 +111,9 @@ public class Main {
                                 eastDistance = findDistanceE(row, column, obj);
                                 //System.out.println("Numeric string eastDistance contains: " + eastDistance);
 
-                                // NOTE: ant found distances will be >0 and wall found will be <0
+                                // NOTE: ant found distances will be > 0 and wall found will be < 0
                                 desiredMove = obj.move(northDistance, southDistance, eastDistance, westDistance);
-                                //System.out.println("Beetles desired move: " + desiredMove);
-                                // DELETE - used for testing 
-                                //System.out.println(" N: " + northDistance + ", S: " + southDistance + ", E: " + eastDistance + ", W: " + westDistance);
-
+                               
                                 if(desiredMove == 'N')
                                 {
                                     desiredRow = (row-1);
@@ -183,9 +176,7 @@ public class Main {
                                 westDistance = findDistanceW(row, column, obj);
                                 eastDistance = findDistanceE(row, column, obj);
 
-                                // for testing - DELETE
-                                //System.out.println(" N: " + northDistance + ", S: " + southDistance + ", E: " + eastDistance + ", W: " + westDistance);
-
+                               
                                 // NOTE: beetle found distance will be <10 and no beetle found distance will =10
                                 desiredMove = obj.move(northDistance, southDistance, eastDistance, westDistance);
 
@@ -220,12 +211,7 @@ public class Main {
 
                                 
 
-    /*                            else // for testing - DELETE
-                                {
-                                    // object does nothing 
-                                    System.out.println(" doesn't want to move");
-                                }
-    */                            
+
                             }
                         } // end of if(grid[row][column] != null)
                     } // end of  for loop (rows)
@@ -299,51 +285,7 @@ public class Main {
                     }
                 }
                 //int feed = 0;
-/*                 System.out.println("T,U,R,N, ," + x);
-                for (int row = 0; row < ROWS; row++)                
-                {
-                    for (int column = 0; column < COLUMNS; column++) // starts at the leftmost column and moves to the right
-                    {
-                        if (grid[row][column] == null)
-                        {
-                            System.out.print(" ,");
-                        }
-                        else if(grid[row][column] != null)
-                        {
-                            Creature obj = grid[row][column];
-                            
-                            if (obj instanceof Ant)
-                            {
-                                System.out.print(antChar);
-                                System.out.print(",");
 
-                                obj.hasMoved = false;   // reset bool so that the object can move in the next turn
-                                //obj.survivalCounter++; // if the object lived, count how many turns its been alive
-
-                            }
-                            else
-                            {
-                                System.out.print(beetleChar);
-                                System.out.print(",");
-
-                                obj.hasMoved = false;
-                                feed = obj.feedingCounter;
-
-                                // might not work for beetle breed
-                                //obj.survivalCounter++; 
-                            
-                            }
-
-                        }
-                       
-                    }
-                    System.out.print("\n");
-                } // end of for loop (rows)
-                System.out.print("\n");
-
-                //System.out.println("feeding counter: " + feed);
-            } // end of for loop (numTurns)
-*/
 
                 System.out.println("TURN " + x);
                 for (int row = 0; row < ROWS; row++)                
@@ -387,10 +329,6 @@ public class Main {
         
 
 
-
-            //System.out.println("Ants: " + antCount + ", Beetles: " + beetleCount); // test that main found all the ants/beetles - DELETE
-
-         
 
         // close scanner objects
         scnr.close();
@@ -587,17 +525,7 @@ public class Main {
                 }
             }
             
-/*             else
-            {
-                System.out.println(" can't move because space is taken");
-            }
-        }
-        else // for testing - DELETE
-        {
-            System.out.println(" doesn't want to/can't move");
-        }
-    
-    */     }   
+     }   
 } // end of checkAvailable()
 
     /*******************************************************
